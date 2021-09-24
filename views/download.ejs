@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fileshare</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-5 text-center">
+      <% if(typeof error !== 'undefined') { %>
+      <h4><%= error %></h4>
+      <% } else { %>
+      <h1>Your file is ready to download</h1>
+      <p>Link expire in 24 hours.</p>
+      <h5><%= filename %></h5>
+      <p class="text-muted">Size: <%= Math.round(filesize / 1024) %>KB</p>
+      <a href="<%= download %>" target="_blank" class="btn btn-primary px-4"
+        >Download</a
+      >
+      <% } %>
+    </div>
+  </body>
+</html>
